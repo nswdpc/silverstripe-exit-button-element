@@ -1,0 +1,7 @@
+---
+Name: nswdpc-exit-button-element
+---
+# elemental
+Page:
+  extensions:
+    ExitButton: 'NSWDPC\ExitButton\Extensions\PageSettingsExtension'

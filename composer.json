@@ -1,0 +1,32 @@
+{
+    "name": "nswdpc/silverstripe-exit-button-element",
+    "description": "Exit button for pages - elemental content block",
+    "type": "silverstripe-vendormodule",
+    "keywords": [
+        "silverstripe",
+        "nsw",
+        "module",
+        "exit button element"
+    ],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "James",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "dnadesign/silverstripe-elemental": "^4.9 || ^5",
+        "nswdpc/silverstripe-exit-button": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "friendsofphp/php-cs-fixer": "^3"
+    },
+    "autoload": {
+        "psr-4": {
+            "NSWDPC\\ExitButton\\": "src/",
+            "NSWDPC\\ExitButton\\Tests\\": "tests/"
+        }
+    }
+}
