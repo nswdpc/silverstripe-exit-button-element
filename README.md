@@ -1,6 +1,6 @@
 # Exit site button - element support
 
-Elemental content block for nswdpc/silverstripe-exit-button
+Elemental content block for [nswdpc/silverstripe-exit-button](https://github.com/nswdpc/silverstripe-exit-button)
 
 See that module for all documentation.
 
