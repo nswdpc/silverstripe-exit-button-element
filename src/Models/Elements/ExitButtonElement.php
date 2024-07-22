@@ -74,7 +74,7 @@ class ExitButtonElement extends BaseElement {
         $button = ExitButton::create();
         $button->setId($this->getAnchor() . '-exit-button');
         if($this->ExitURL) {
-            $button->setUrl($this->ExitURL);
+            $button->setExitUrl($this->ExitURL);
         }
         $data['ExitButton'] = $button;
         return $this->customise(ArrayData::create($data))->renderWith(static::class);
