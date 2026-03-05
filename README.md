@@ -2,13 +2,19 @@
 
 Elemental content block for [nswdpc/silverstripe-exit-button](https://github.com/nswdpc/silverstripe-exit-button)
 
-See that module for all documentation.
+See that module for all documentation and usage scenarios.
+
+Provides:
++ content block for authors to add to a page (note: add as an allowed element)
++ configurable exit URL
++ configurable button label
++ option to use 'escape' functionality (or not)
 
 ## Installation
 
 The only supported method of installation is via composer:
 
-```
+```sh
 composer require nswdpc/silverstripe-exit-button-element
 ```
 
