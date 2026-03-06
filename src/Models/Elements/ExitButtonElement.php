@@ -60,7 +60,7 @@ class ExitButtonElement extends BaseElement
     /**
      * @inheritdoc
      */
-    private static string $description = 'Display a page exit button';
+    private static string $class_description = 'Display a page exit button';
 
     /**
      * @inheritdoc
