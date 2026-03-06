@@ -17,7 +17,7 @@
     ],
     "require": {
         "dnadesign/silverstripe-elemental": "^5",
-        "nswdpc/silverstripe-exit-button": "dev-feat-ci-files",
+        "nswdpc/silverstripe-exit-button": "^1.2",
         "codem/silverstripe-html5-inputs": "^1"
     },
     "require-dev": {
