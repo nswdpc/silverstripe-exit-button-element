@@ -90,21 +90,23 @@ class ExitButtonElement extends BaseElement {
      */
     public function getCmsFields() {
         $fields = parent::getCmsFields();
-        $fields->addFieldToTab(
+        $fields->addFieldsToTab(
             'Root.Main',
-            UrlField::create(
-                'ExitURL',
-                _t('ExitButton.EXIT_URL', 'Exit URL')
-            )->restrictToHttps()
-            ->setRequiredParts(['scheme','host']),
-            TextField::create(
-                'Label',
-                _t('ExitButton.EXIT_LABEL', 'Label for button')
-            ),
-            CheckboxField::create(
-                'UseEsc',
-                _t('ExitButton.EXIT_ENABLE_DOUBLE_ESCAPE', 'Enable double escape keypress')
-            )
+            [
+                UrlField::create(
+                    'ExitURL',
+                    _t('ExitButton.EXIT_URL', 'Exit URL')
+                )->restrictToHttps()
+                ->setRequiredParts(['scheme','host']),
+                TextField::create(
+                    'Label',
+                    _t('ExitButton.EXIT_LABEL', 'Label for button')
+                ),
+                CheckboxField::create(
+                    'UseEsc',
+                    _t('ExitButton.EXIT_ENABLE_DOUBLE_ESCAPE', 'Enable double escape keypress')
+                )
+            ]
         );
         return $fields;
     }
