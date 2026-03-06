@@ -7,7 +7,7 @@ use DNADesign\Elemental\Models\BaseElement;
 use NSWDPC\ExitButton\Models\ExitButton;
 use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\TextField;
-use SilverStripe\View\ArrayData;
+use SilverStripe\Model\ArrayData;
 
 /**
  * Provide an exit button element
@@ -75,7 +75,7 @@ class ExitButtonElement extends BaseElement
      * Return a rendered template for this model
      */
     #[\Override]
-    public function forTemplate($holder = true)
+    public function forTemplate($holder = true): string
     {
         $data = [];
         $button = ExitButton::create();
