@@ -5,11 +5,9 @@ namespace NSWDPC\ExitButton\Models\Elements;
 use Codem\Utilities\HTML5\UrlField;
 use DNADesign\Elemental\Models\BaseElement;
 use NSWDPC\ExitButton\Models\ExitButton;
-use SilverStripe\Forms\TextareaField;
 use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\TextField;
 use SilverStripe\View\ArrayData;
-use SilverStripe\View\Requirements;
 
 /**
  * Provide an exit button element
@@ -18,8 +16,8 @@ use SilverStripe\View\Requirements;
  * @property ?string $Label
  * @property bool $UseEsc
  */
-class ExitButtonElement extends BaseElement {
-
+class ExitButtonElement extends BaseElement
+{
     /**
      * @inheritdoc
      */
@@ -77,13 +75,14 @@ class ExitButtonElement extends BaseElement {
      * Return a rendered template for this model
      */
     #[\Override]
-    public function forTemplate($holder = true) {
+    public function forTemplate($holder = true)
+    {
         $data = [];
         $button = ExitButton::create();
         $button->setId($this->getAnchor() . '-exit-button');
         $button->setLabel($this->Label ?? '');
         $button->setUseEsc($this->UseEsc == 1);
-        if($this->ExitURL) {
+        if ($this->ExitURL) {
             $button->setExitUrl($this->ExitURL);
         }
 
@@ -95,7 +94,8 @@ class ExitButtonElement extends BaseElement {
      * CMS fields for element
      */
     #[\Override]
-    public function getCmsFields() {
+    public function getCmsFields()
+    {
         $fields = parent::getCmsFields();
         $fields->addFieldsToTab(
             'Root.Main',
