@@ -6,6 +6,7 @@ use Codem\Utilities\HTML5\UrlField;
 use DNADesign\Elemental\Models\BaseElement;
 use NSWDPC\ExitButton\Models\ExitButton;
 use SilverStripe\Forms\TextareaField;
+use SilverStripe\Forms\CheckboxField;
 use SilverStripe\Forms\TextField;
 use SilverStripe\View\ArrayData;
 use SilverStripe\View\Requirements;
@@ -45,7 +46,9 @@ class ExitButtonElement extends BaseElement {
      * @inheritdoc
      */
     private static $db = [
-        'ExitURL' => 'Varchar(255)'
+        'ExitURL' => 'Varchar(255)',
+        'Label' => 'Varchar(255',
+        'UseEsc' => 'Boolean'
     ];
 
     /**
@@ -73,6 +76,8 @@ class ExitButtonElement extends BaseElement {
         $data = [];
         $button = ExitButton::create();
         $button->setId($this->getAnchor() . '-exit-button');
+        $button->setLabel($this->Label ?? '');
+        $button->setUseEsc($this->UseEsc == 1);
         if($this->ExitURL) {
             $button->setExitUrl($this->ExitURL);
         }
@@ -91,7 +96,15 @@ class ExitButtonElement extends BaseElement {
                 'ExitURL',
                 _t('ExitButton.EXIT_URL', 'Exit URL')
             )->restrictToHttps()
-            ->setRequiredParts(['scheme','host'])
+            ->setRequiredParts(['scheme','host']),
+            TextField::create(
+                'Label',
+                _t('ExitButton.EXIT_LABEL', 'Label for button')
+            ),
+            CheckboxField::create(
+                'UseEsc',
+                _t('ExitButton.EXIT_ENABLE_DOUBLE_ESCAPE', 'Enable double escape keypress')
+            )
         );
         return $fields;
     }
